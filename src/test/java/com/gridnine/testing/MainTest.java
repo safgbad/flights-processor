@@ -1,4 +1,4 @@
-package com.gridnine;
+package com.gridnine.testing;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
