@@ -27,4 +27,8 @@ public abstract class TimeFlightFilter implements FlightFilter, TransferManaging
         this.timeLimit = timeLimit;
     }
 
+    public long getTimeLimit() {
+        return timeLimit;
+    }
+
 }

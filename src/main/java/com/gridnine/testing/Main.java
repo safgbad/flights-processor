@@ -22,14 +22,14 @@ public class Main {
         printFlights(flights);
 
         System.out.println();
-        System.out.println("Removed the flights that depart before now:");
+        System.out.println("Excluded the flights that depart before now:");
         FlightFilter pastDepartingFlightFilter = new PastDepartingFlightFilter();
         FlightProcessor pastDepartingFilterFlightProcessor = new FlightProcessor(pastDepartingFlightFilter);
         List<Flight> pastDepartingFilteredFlights = pastDepartingFilterFlightProcessor.process(flights);
         printFlights(pastDepartingFilteredFlights);
 
         System.out.println();
-        System.out.println("Removed the flights that have segments with department after arrival:");
+        System.out.println("Excluded the flights that have segments with department after arrival:");
         FlightFilter segmentArrivingBeforeDepartureFlightFilter = new SegmentArrivingBeforeDepartureFlightFilter();
         FlightProcessor segmentArrivingBeforeDepartureFilterFlightProcessor
                 = new FlightProcessor(segmentArrivingBeforeDepartureFlightFilter);
@@ -38,11 +38,20 @@ public class Main {
         printFlights(segmentArrivingBeforeDepartureFilteredFlights);
 
         System.out.println();
-        System.out.println("Removed the flights with total transfer time more than 2 hours:");
+        System.out.println("Excluded the flights with total transfer time more than 2 hours:");
         FlightFilter maxTransferTimeFlightFilter = new MaxTransferTimeFlightFilter(2, TimeUnit.HOURS);
         FlightProcessor maxTransferTimeFilterFlightProcessor = new FlightProcessor(maxTransferTimeFlightFilter);
         List<Flight> maxTransferTimeFilteredFlights = maxTransferTimeFilterFlightProcessor.process(flights);
         printFlights(maxTransferTimeFilteredFlights);
+
+        System.out.println();
+        System.out.println("Applied all three filters:");
+        FlightProcessor processor = new FlightProcessor(
+                pastDepartingFlightFilter,
+                segmentArrivingBeforeDepartureFlightFilter,
+                maxTransferTimeFlightFilter);
+        List<Flight> filteredFlights = processor.process(flights);
+        printFlights(filteredFlights);
     }
 
 }
