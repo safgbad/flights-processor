@@ -6,6 +6,9 @@ import java.time.LocalDateTime;
 
 import static com.gridnine.testing.util.LocalDateTimeUtils.getMillisFromLocalDateTime;
 
+/**
+ * Bound up with transfer duration filters.
+ */
 public interface TransferManaging {
 
     default long getSingleTransferDurationInMillis(Segment leftBound, Segment rightBound) {

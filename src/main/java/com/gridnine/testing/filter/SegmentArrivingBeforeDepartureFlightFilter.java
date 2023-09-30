@@ -6,6 +6,9 @@ import com.gridnine.testing.model.Segment;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Filters flights that have segments with arrival before departure.
+ */
 public class SegmentArrivingBeforeDepartureFlightFilter implements FlightFilter {
 
     private boolean isArrivalBeforeDeparture(Segment segment) {

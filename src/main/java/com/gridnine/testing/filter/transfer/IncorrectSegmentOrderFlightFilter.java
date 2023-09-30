@@ -6,6 +6,9 @@ import com.gridnine.testing.model.Segment;
 
 import java.util.List;
 
+/**
+ * Filters flights with at least one impossible transfer (left segment's arrival is after right segment's departure).
+ */
 public class IncorrectSegmentOrderFlightFilter implements FlightFilter, TransferManaging {
 
     @Override

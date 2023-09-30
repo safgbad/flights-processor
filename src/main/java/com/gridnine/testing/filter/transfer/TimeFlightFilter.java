@@ -4,6 +4,9 @@ import com.gridnine.testing.filter.FlightFilter;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Bound up with time limit filters.
+ */
 public abstract class TimeFlightFilter implements FlightFilter, TransferManaging {
 
     protected final long timeLimit;

@@ -6,6 +6,9 @@ import com.gridnine.testing.model.Segment;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Filters flights that depart in the past (first segment departure is before an instance of filter initialization).
+ */
 public class PastDepartingFlightFilter implements FlightFilter {
 
     private final LocalDateTime currentDateTime;

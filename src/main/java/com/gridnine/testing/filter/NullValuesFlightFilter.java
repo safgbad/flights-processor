@@ -6,6 +6,9 @@ import com.gridnine.testing.model.Segment;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Filters null-valued flights and flights with null-valued segments.
+ */
 public class NullValuesFlightFilter implements FlightFilter {
 
     @Override

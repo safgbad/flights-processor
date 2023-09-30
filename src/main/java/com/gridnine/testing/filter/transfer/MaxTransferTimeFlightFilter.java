@@ -6,6 +6,9 @@ import com.gridnine.testing.model.Segment;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Filters flights with total transfer duration more than specified time limit.
+ */
 public class MaxTransferTimeFlightFilter extends TimeFlightFilter {
 
     public MaxTransferTimeFlightFilter(int timeLimit, TimeUnit timeUnit) {

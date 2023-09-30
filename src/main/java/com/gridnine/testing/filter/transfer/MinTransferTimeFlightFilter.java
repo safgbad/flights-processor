@@ -6,6 +6,9 @@ import com.gridnine.testing.model.Segment;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Filters flights that have transfers lasting less than specified time limit.
+ */
 public class MinTransferTimeFlightFilter extends TimeFlightFilter {
 
     public MinTransferTimeFlightFilter(int timeLimit, TimeUnit timeUnit) {
